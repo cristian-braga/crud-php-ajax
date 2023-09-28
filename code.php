@@ -10,7 +10,7 @@ if (isset($_POST['save'])) {
     if ($name == NULL || $email == NULL || $phone == NULL || $course == NULL) {
         $res = [
             'status' => 422,
-            'message' => 'All fields are mandatory'
+            'message' => 'Todos os campos são obrigatórios!'
         ];
 
         echo json_encode($res);
@@ -25,7 +25,7 @@ if (isset($_POST['save'])) {
     if ($query_run) {
         $res = [
             'status' => 200,
-            'message' => 'Student created successfully'
+            'message' => 'Estudante cadastrado com sucesso!'
         ];
 
         echo json_encode($res);
@@ -34,7 +34,7 @@ if (isset($_POST['save'])) {
     } else {
         $res = [
             'status' => 500,
-            'message' => 'Student not created'
+            'message' => 'Falha ao cadastrar estudante.'
         ];
 
         echo json_encode($res);
@@ -55,7 +55,6 @@ if (isset($_GET['student_id'])) {
 
         $res = [
             'status' => 200,
-            'message' => 'Student fetch successfully by Id',
             'data' => $student
         ];
 
@@ -65,7 +64,7 @@ if (isset($_GET['student_id'])) {
     } else {
         $res = [
             'status' => 404,
-            'message' => 'Students Id not found'
+            'message' => 'Estudante não existe.'
         ];
 
         echo json_encode($res);
@@ -84,7 +83,7 @@ if (isset($_POST['update'])) {
     if ($name == NULL || $email == NULL || $phone == NULL || $course == NULL) {
         $res = [
             'status' => 422,
-            'message' => 'All fields are mandatory'
+            'message' => 'Todos os campos são obrigatórios!'
         ];
 
         echo json_encode($res);
@@ -99,7 +98,7 @@ if (isset($_POST['update'])) {
     if ($query_run) {
         $res = [
             'status' => 200,
-            'message' => 'Student updated successfully'
+            'message' => 'Estudante editado com sucesso!'
         ];
 
         echo json_encode($res);
@@ -108,7 +107,7 @@ if (isset($_POST['update'])) {
     } else {
         $res = [
             'status' => 500,
-            'message' => 'Student not updated'
+            'message' => 'Falha ao editar estudante.'
         ];
 
         echo json_encode($res);
@@ -127,7 +126,7 @@ if (isset($_POST['delete_student'])) {
     if ($query_run) {
         $res = [
             'status' => 200,
-            'message' => 'Student deleted successfully'
+            'message' => 'Estudante excluído com sucesso!'
         ];
 
         echo json_encode($res);
@@ -136,7 +135,7 @@ if (isset($_POST['delete_student'])) {
     } else {
         $res = [
             'status' => 500,
-            'message' => 'Student not deleted'
+            'message' => 'Falha ao excluir estudante.'
         ];
 
         echo json_encode($res);
